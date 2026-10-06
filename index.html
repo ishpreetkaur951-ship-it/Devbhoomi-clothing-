@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Dev Bhoomi Clothing – Elegance Woven Into Tradition. Luxury fashion for men and women."/>
+  <meta name="keywords" content="Dev Bhoomi, clothing, fashion, luxury, Indian fashion, men, women"/>
+  <title>Dev Bhoomi Clothing | Elegance Woven Into Tradition</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet"/>
+</head>
+<body class="light-mode">
+
+  <!-- Loading Screen -->
+  <div id="loader">
+    <div class="loader-inner">
+      <span class="loader-brand">DB</span>
+      <div class="loader-bar"><div class="loader-fill"></div></div>
+    </div>
+  </div>
+
+  <!-- ===== NAVBAR ===== -->
+  <header id="navbar">
+    <div class="nav-left">
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav-links" id="navLinks">
+        <a href="#home">Home</a>
+        <a href="#men">Men</a>
+        <a href="#women">Women</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+
+    <a href="#home" class="nav-logo">
+      <span class="logo-main">DEV BHOOMI</span>
+      <span class="logo-sub">CLOTHING</span>
+    </a>
+
+    <div class="nav-right">
+      <button class="icon-btn" id="searchToggle" aria-label="Search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+      </button>
+      <button class="icon-btn dark-toggle" id="darkToggle" aria-label="Dark mode">
+        <svg id="moonIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+        <svg id="sunIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="display:none"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      </button>
+      <button class="icon-btn cart-btn" id="cartToggle" aria-label="Cart">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Search Bar -->
+  <div class="search-bar" id="searchBar">
+    <input type="text" id="searchInput" placeholder="Search for styles, collections…"/>
+    <button onclick="closeSearch()">✕</button>
+  </div>
+
+  <!-- Mobile Nav Overlay -->
+  <div class="nav-overlay" id="navOverlay" onclick="closeMenu()"></div>
+
+  <!-- ===== HERO ===== -->
+  <section id="home" class="hero">
+    <div class="hero-slides">
+      <div class="hero-slide active" style="background-image:url('https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=1600&q=80')"></div>
+      <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=1600&q=80')"></div>
+      <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1509631179647-0177331693ae?w=1600&q=80')"></div>
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Summer / Autumn 2025</p>
+      <h1 class="hero-brand">DEV BHOOMI<br/><em>CLOTHING</em></h1>
+      <p class="hero-tagline">Elegance Woven Into Tradition</p>
+      <div class="hero-btns">
+        <a href="#new-collection" class="btn-primary">New Collection</a>
+        <a href="#men" class="btn-ghost">Shop Men</a>
+        <a href="#women" class="btn-ghost">Shop Women</a>
+      </div>
+    </div>
+    <div class="hero-dots">
+      <span class="dot active" onclick="goSlide(0)"></span>
+      <span class="dot" onclick="goSlide(1)"></span>
+      <span class="dot" onclick="goSlide(2)"></span>
+    </div>
+    <div class="hero-scroll-hint">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ===== MARQUEE ===== -->
+  <div class="marquee-wrap">
+    <div class="marquee-track">
+      <span>New Collection 2025</span><span>·</span>
+      <span>Men's Edit</span><span>·</span>
+      <span>Women's Atelier</span><span>·</span>
+      <span>Crafted In India</span><span>·</span>
+      <span>Free Shipping Over ₹2999</span><span>·</span>
+      <span>New Collection 2025</span><span>·</span>
+      <span>Men's Edit</span><span>·</span>
+      <span>Women's Atelier</span><span>·</span>
+      <span>Crafted In India</span><span>·</span>
+      <span>Free Shipping Over ₹2999</span><span>·</span>
+    </div>
+  </div>
+
+  <!-- ===== NEW COLLECTION ===== -->
+  <section id="new-collection" class="section editorial">
+    <div class="editorial-text reveal">
+      <p class="section-eyebrow">Just Arrived</p>
+      <h2>The New<br/><em>Collection</em></h2>
+      <p class="section-desc">Handcrafted silhouettes blending contemporary minimalism with India's rich textile heritage.</p>
+      <a href="#men" class="btn-outline">Explore All</a>
+    </div>
+    <div class="editorial-grid reveal">
+      <div class="editorial-card tall">
+        <img src="https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?w=800&q=80" alt="New Collection Women"/>
+        <div class="card-label">Women's New</div>
+      </div>
+      <div class="editorial-card">
+        <img src="https://images.unsplash.com/photo-1516257984-b1b4d707412e?w=600&q=80" alt="New Collection Men"/>
+        <div class="card-label">Men's Edit</div>
+      </div>
+      <div class="editorial-card">
+        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80" alt="Accessories"/>
+        <div class="card-label">Accessories</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CATEGORIES ===== -->
+  <section class="section categories-section">
+    <p class="section-eyebrow center reveal">Browse By</p>
+    <h2 class="center reveal">Shop <em>Categories</em></h2>
+    <div class="categories-grid reveal">
+      <a href="#men" class="cat-card">
+        <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=700&q=80" alt="Men"/>
+        <div class="cat-overlay"><span>Men</span></div>
+      </a>
+      <a href="#women" class="cat-card">
+        <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=700&q=80" alt="Women"/>
+        <div class="cat-overlay"><span>Women</span></div>
+      </a>
+      <a href="#new-collection" class="cat-card">
+        <img src="https://images.unsplash.com/photo-1523381294911-8d3cead13475?w=700&q=80" alt="Accessories"/>
+        <div class="cat-overlay"><span>Accessories</span></div>
+      </a>
+      <a href="#new-collection" class="cat-card">
+        <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=700&q=80" alt="Festive"/>
+        <div class="cat-overlay"><span>Festive</span></div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ===== TRENDING PRODUCTS ===== -->
+  <section id="trending" class="section products-section">
+    <p class="section-eyebrow center reveal">Most Loved</p>
+    <h2 class="center reveal">Trending <em>Now</em></h2>
+    <div class="products-grid reveal" id="trendingGrid"></div>
+  </section>
+
+  <!-- ===== MEN COLLECTION ===== -->
+  <section id="men" class="section products-section alt-bg">
+    <p class="section-eyebrow center reveal">For Him</p>
+    <h2 class="center reveal">Men's <em>Collection</em></h2>
+    <div class="products-grid reveal" id="menGrid"></div>
+  </section>
+
+  <!-- ===== WOMEN COLLECTION ===== -->
+  <section id="women" class="section products-section">
+    <p class="section-eyebrow center reveal">For Her</p>
+    <h2 class="center reveal">Women's <em>Collection</em></h2>
+    <div class="products-grid reveal" id="womenGrid"></div>
+  </section>
+
+  <!-- ===== INSTAGRAM GALLERY ===== -->
+  <section class="section gallery-section">
+    <p class="section-eyebrow center reveal">@devbhoomiclo</p>
+    <h2 class="center reveal">Style <em>Gallery</em></h2>
+    <div class="gallery-grid reveal">
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1485968579580-b6d095142e6e?w=400&q=80" alt="style1"/><div class="gallery-hover">❤ 1.2k</div></div>
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=400&q=80" alt="style2"/><div class="gallery-hover">❤ 980</div></div>
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1511401139252-f158d3209c17?w=400&q=80" alt="style3"/><div class="gallery-hover">❤ 2.1k</div></div>
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=400&q=80" alt="style4"/><div class="gallery-hover">❤ 756</div></div>
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1500917293891-ef795e70e1f6?w=400&q=80" alt="style5"/><div class="gallery-hover">❤ 1.4k</div></div>
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1520367445093-50dc08a59d9d?w=400&q=80" alt="style6"/><div class="gallery-hover">❤ 890</div></div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section id="about" class="section about-section alt-bg">
+    <div class="about-inner reveal">
+      <div class="about-img">
+        <img src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=800&q=80" alt="About Dev Bhoomi"/>
+      </div>
+      <div class="about-text">
+        <p class="section-eyebrow">Our Story</p>
+        <h2>Born From<br/><em>Tradition</em></h2>
+        <p>Dev Bhoomi Clothing was born from the sacred lands of Uttarakhand — where every thread tells a story. We blend India's finest textile heritage with contemporary luxury fashion, creating pieces that honor the past while embracing the future.</p>
+        <p>Each garment is thoughtfully crafted using sustainable fabrics, supporting local artisans and preserving generations-old weaving traditions.</p>
+        <a href="#contact" class="btn-outline">Get In Touch</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== NEWSLETTER ===== -->
+  <section class="newsletter-section reveal">
+    <div class="newsletter-inner">
+      <p class="section-eyebrow light">Exclusive Access</p>
+      <h2>Join The<br/><em>Inner Circle</em></h2>
+      <p class="newsletter-desc">Be first to discover new collections, private sales, and style stories from Dev Bhoomi.</p>
+      <form class="newsletter-form" onsubmit="subscribeNewsletter(event)">
+        <input type="email" placeholder="Your email address" required/>
+        <button type="submit">Subscribe</button>
+      </form>
+      <p class="newsletter-note">No spam. Unsubscribe anytime.</p>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section id="contact" class="section contact-section">
+    <p class="section-eyebrow center reveal">Say Hello</p>
+    <h2 class="center reveal"><em>Contact</em> Us</h2>
+    <div class="contact-inner reveal">
+      <form class="contact-form" onsubmit="submitContact(event)">
+        <div class="form-row">
+          <input type="text" placeholder="Your Name" required/>
+          <input type="email" placeholder="Email Address" required/>
+        </div>
+        <input type="text" placeholder="Subject"/>
+        <textarea rows="5" placeholder="Your message…" required></textarea>
+        <button type="submit" class="btn-primary">Send Message</button>
+      </form>
+      <div class="contact-info">
+        <div class="contact-item">
+          <span class="ci-label">Address</span>
+          <p>Dev Bhoomi House, Rishikesh Road,<br/>Dehradun, Uttarakhand 248001</p>
+        </div>
+        <div class="contact-item">
+          <span class="ci-label">Email</span>
+          <p>hello@devbhoomiclo.in</p>
+        </div>
+        <div class="contact-item">
+          <span class="ci-label">Phone</span>
+          <p>+91 98765 43210</p>
+        </div>
+        <div class="contact-item">
+          <span class="ci-label">Hours</span>
+          <p>Mon – Sat: 10AM – 7PM IST</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <span class="logo-main">DEV BHOOMI</span>
+        <span class="logo-sub">CLOTHING</span>
+        <p>Elegance Woven Into Tradition</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>Shop</h4>
+          <a href="#men">Men</a>
+          <a href="#women">Women</a>
+          <a href="#new-collection">New Arrivals</a>
+          <a href="#trending">Trending</a>
+        </div>
+        <div class="footer-col">
+          <h4>Help</h4>
+          <a href="#">Size Guide</a>
+          <a href="#">Returns</a>
+          <a href="#">Shipping</a>
+          <a href="#">FAQ</a>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="#about">About Us</a>
+          <a href="#">Careers</a>
+          <a href="#">Press</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h4>Follow Us</h4>
+          <a href="#">Instagram</a>
+          <a href="#">Pinterest</a>
+          <a href="#">Facebook</a>
+          <a href="#">YouTube</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Dev Bhoomi Clothing. All rights reserved.</p>
+      <p>Made with ♥ in Uttarakhand, India</p>
+    </div>
+  </footer>
+
+  <!-- ===== CART DRAWER ===== -->
+  <div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+  <aside class="cart-drawer" id="cartDrawer">
+    <div class="cart-header">
+      <h3>Your Cart</h3>
+      <button onclick="closeCart()">✕</button>
+    </div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-footer" id="cartFooter"></div>
+  </aside>
+
+  <!-- ===== QUICK VIEW MODAL ===== -->
+  <div class="modal-overlay" id="modalOverlay" onclick="closeModal()"></div>
+  <div class="modal" id="productModal">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div class="modal-body" id="modalBody"></div>
+  </div>
+
+  <!-- Back to Top -->
+  <button class="back-top" id="backTop" onclick="scrollToTop()" aria-label="Back to top">↑</button>
+
+  <!-- Toast -->
+  <div class="toast" id="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
